@@ -43,21 +43,25 @@ body {
 
 .subheading {
     font-weight: bolder;
-    color: black;   
+    color: hsl(209, 33%, 12%);  
 }
 
 .info {
     margin-bottom: 2em;
+    color: hsl(209, 33%, 12%);
 }
 
 .form {
     display: flex;
-    flex-direction: column;
     width: 80%;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 input[type=email] {
-    width: 100%;
+    order: 1;
+    width: 60%;
     margin-bottom: .5em;
     padding: 0.8em 0.5em;
     border-radius: 50px;
@@ -75,7 +79,8 @@ input:focus {
 }
 
 button[type=submit] {
-    width: 100%;
+    order: 2;
+    width: 30%;
     padding: 0.8em 0.5em;
     border-radius: 50px;
     border: none;
@@ -84,7 +89,14 @@ button[type=submit] {
     color: white;
 }
 
+button:hover {
+    background-color: hsla(223, 87%, 63%, 0.489);
+    cursor: pointer;
+}
+
 .validemail {
+    order: 3;
+    align-self: flex-end;
     font-size: .7em;
     font-style: italic;
     color:hsl(354, 100%, 66%);
@@ -94,7 +106,7 @@ button[type=submit] {
 }
 
 .error {
-    border: 2px solid hsl(354, 100%, 66%);
+    outline: 1px solid hsl(354, 100%, 66%);
 }
 
 input.error:focus {
@@ -109,7 +121,57 @@ input.error::placeholder{color: hsl(354, 100%, 66%);}
     margin-bottom: 2em;
 }
 
+.foot {
+    justify-self: flex-end;
+}
+
 p.footer {
-    position: absolute;
-    bottom : 0;
+    font-size: .8em;
+    color: hsl(0, 0%, 59%)
+}
+
+.picplace {
+    margin-bottom: 5em;
+}
+
+img[alt=background] {
+    width: 100%;
+}
+
+.svgcollection svg {
+    width: 30px;
+    height: 30px;
+    outline: 1px solid hsl(223, 100%, 88%);
+    outline-offset: 5px;
+    border-radius: 50%;
+}
+
+.svgcollection {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-bottom: 2em;
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    input[type=email] {
+        width: 100%;
+        order: 1;
+    }
+
+    .validemail {
+        align-self: flex-start;
+    }
+
+    button[type=submit] {
+        width: 100%;
+        order: 3;
+    }
+
+
 }
