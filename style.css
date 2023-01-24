@@ -106,8 +106,9 @@ button:hover {
 }
 
 .error {
-    outline: 1px solid hsl(354, 100%, 66%);
+    border: 1px solid hsl(354, 100%, 66%);
     -moz-outline-radius: inherit;
+    box-shadow: 0 0 2px hsl(354, 100%, 66%);
 }
 
 input.error:focus {
